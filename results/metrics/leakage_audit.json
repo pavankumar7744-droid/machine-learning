@@ -1,0 +1,142 @@
+{
+    "Administrative": {
+        "roc_auc": 0.6243588593619538,
+        "is_leaky": false
+    },
+    "Administrative_Duration": {
+        "roc_auc": 0.6210084285505951,
+        "is_leaky": false
+    },
+    "Informational": {
+        "roc_auc": 0.5641482449312591,
+        "is_leaky": false
+    },
+    "Informational_Duration": {
+        "roc_auc": 0.5606586425959266,
+        "is_leaky": false
+    },
+    "ProductRelated": {
+        "roc_auc": 0.6581853693637435,
+        "is_leaky": false
+    },
+    "ProductRelated_Duration": {
+        "roc_auc": 0.6721665701852204,
+        "is_leaky": false
+    },
+    "BounceRates": {
+        "roc_auc": 0.608613049089698,
+        "is_leaky": false
+    },
+    "ExitRates": {
+        "roc_auc": 0.6999065203706789,
+        "is_leaky": false
+    },
+    "PageValues": {
+        "roc_auc": 0.8626497420353614,
+        "is_leaky": true
+    },
+    "SpecialDay": {
+        "roc_auc": 0.5368325371274487,
+        "is_leaky": false
+    },
+    "OperatingSystems": {
+        "roc_auc": 0.5205154604743406,
+        "is_leaky": false
+    },
+    "Browser": {
+        "roc_auc": 0.5104440326041759,
+        "is_leaky": false
+    },
+    "Region": {
+        "roc_auc": 0.48534077967841965,
+        "is_leaky": false
+    },
+    "TrafficType": {
+        "roc_auc": 0.4591773261824649,
+        "is_leaky": false
+    },
+    "Weekend": {
+        "roc_auc": 0.5161812126508002,
+        "is_leaky": false
+    },
+    "total_pages": {
+        "roc_auc": 0.6626222264420519,
+        "is_leaky": false
+    },
+    "total_duration": {
+        "roc_auc": 0.675262512057636,
+        "is_leaky": false
+    },
+    "avg_time_per_page": {
+        "roc_auc": 0.6132944958101892,
+        "is_leaky": false
+    },
+    "product_page_share": {
+        "roc_auc": 0.5937690200149465,
+        "is_leaky": false
+    },
+    "product_time_share": {
+        "roc_auc": 0.45188253402868783,
+        "is_leaky": false
+    },
+    "is_returning": {
+        "roc_auc": 0.5499009568932625,
+        "is_leaky": false
+    },
+    "is_new": {
+        "roc_auc": 0.5488693474859611,
+        "is_leaky": false
+    },
+    "is_peak_season": {
+        "roc_auc": 0.5752397400992232,
+        "is_leaky": false
+    },
+    "has_pagevalue": {
+        "roc_auc": 0.8452256073763232,
+        "is_leaky": true
+    },
+    "Month_Dec": {
+        "roc_auc": 0.5158207232199843,
+        "is_leaky": false
+    },
+    "Month_Feb": {
+        "roc_auc": 0.5,
+        "is_leaky": false
+    },
+    "Month_Jul": {
+        "roc_auc": 0.48429869608527787,
+        "is_leaky": false
+    },
+    "Month_June": {
+        "roc_auc": 0.5048347261041741,
+        "is_leaky": false
+    },
+    "Month_Mar": {
+        "roc_auc": 0.5,
+        "is_leaky": false
+    },
+    "Month_May": {
+        "roc_auc": 0.4420624924807866,
+        "is_leaky": false
+    },
+    "Month_Nov": {
+        "roc_auc": 0.5910604633192074,
+        "is_leaky": false
+    },
+    "Month_Oct": {
+        "roc_auc": 0.48071716474326054,
+        "is_leaky": false
+    },
+    "Month_Sep": {
+        "roc_auc": 0.48238910509378724,
+        "is_leaky": false
+    },
+    "VisitorType_Other": {
+        "roc_auc": 0.5010316094073014,
+        "is_leaky": false
+    },
+    "VisitorType_Returning_Visitor": {
+        "roc_auc": 0.5499009568932625,
+        "is_leaky": false
+    }
+}
