@@ -16,7 +16,7 @@ def analyze_dataset(file_bytes: bytes, filename: str) -> dict:
         'rows': len(df),
         'columns': len(df.columns),
         'dtypes': {col: str(dtype) for col, dtype in df.dtypes.items()},
-        'missing_values': df.isnull().sum().to_dict(),
+        'missing_values': {k: int(v) for k, v in df.isnull().sum().items()},
         'duplicates': int(df.duplicated().sum()),
         'date_columns': [],
         'numerical_columns': [],

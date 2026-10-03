@@ -10,10 +10,12 @@ router = APIRouter()
 def generate_forecast(request: ForecastConfigureRequest):
     # Find dataset file
     file_path = None
-    for file in os.listdir("../data/uploads"):
-        if file.startswith(request.dataset_id) and not file.endswith("_analysis.json"):
-            file_path = os.path.join("../data/uploads", file)
-            break
+    upload_dir = "../data/uploads"
+    if os.path.exists(upload_dir):
+        for file in os.listdir(upload_dir):
+            if file.startswith(request.dataset_id) and not file.endswith("_analysis.json"):
+                file_path = os.path.join(upload_dir, file)
+                break
             
     if not file_path:
         raise HTTPException(status_code=404, detail="Dataset not found")

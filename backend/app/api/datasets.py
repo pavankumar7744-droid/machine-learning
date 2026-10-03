@@ -15,7 +15,9 @@ async def upload_dataset(file: UploadFile = File(...)):
     file_id = str(uuid.uuid4())
     
     # Save file
-    save_path = f"../data/uploads/{file_id}_{file.filename}"
+    upload_dir = "../data/uploads"
+    os.makedirs(upload_dir, exist_ok=True)
+    save_path = f"{upload_dir}/{file_id}_{file.filename}"
     with open(save_path, "wb") as f:
         f.write(contents)
         
@@ -37,8 +39,10 @@ async def upload_dataset(file: UploadFile = File(...)):
 @router.get("/{dataset_id}/analysis")
 def get_dataset_analysis(dataset_id: str):
     # Find the analysis file
-    for file in os.listdir("../data/uploads"):
-        if file.startswith(dataset_id) and file.endswith("_analysis.json"):
-            with open(os.path.join("../data/uploads", file), "r") as f:
-                return json.load(f)
+    upload_dir = "../data/uploads"
+    if os.path.exists(upload_dir):
+        for file in os.listdir(upload_dir):
+            if file.startswith(dataset_id) and file.endswith("_analysis.json"):
+                with open(os.path.join(upload_dir, file), "r") as f:
+                    return json.load(f)
     raise HTTPException(status_code=404, detail="Dataset not found")
