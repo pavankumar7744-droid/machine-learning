@@ -29,7 +29,8 @@ export default function Forecasting() {
       const res = await axios.post('http://localhost:8000/api/forecast/run', payload);
       setResult(res.data);
     } catch (err) {
-      alert("Error generating forecast.");
+      const errorMsg = err.response?.data?.detail || err.message;
+      alert("Error generating forecast: " + errorMsg);
       console.error(err);
     }
     setLoading(false);

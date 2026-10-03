@@ -1,0 +1,75 @@
+{
+    "filename": "sales_data.csv",
+    "rows": 76000,
+    "columns": 16,
+    "dtypes": {
+        "Date": "str",
+        "Store ID": "str",
+        "Product ID": "str",
+        "Category": "str",
+        "Region": "str",
+        "Inventory Level": "int64",
+        "Units Sold": "int64",
+        "Units Ordered": "int64",
+        "Price": "float64",
+        "Discount": "int64",
+        "Weather Condition": "str",
+        "Promotion": "int64",
+        "Competitor Pricing": "float64",
+        "Seasonality": "str",
+        "Epidemic": "int64",
+        "Demand": "int64"
+    },
+    "missing_values": {
+        "Date": 0,
+        "Store ID": 0,
+        "Product ID": 0,
+        "Category": 0,
+        "Region": 0,
+        "Inventory Level": 0,
+        "Units Sold": 0,
+        "Units Ordered": 0,
+        "Price": 0,
+        "Discount": 0,
+        "Weather Condition": 0,
+        "Promotion": 0,
+        "Competitor Pricing": 0,
+        "Seasonality": 0,
+        "Epidemic": 0,
+        "Demand": 0
+    },
+    "duplicates": 0,
+    "date_columns": [
+        "Date"
+    ],
+    "numerical_columns": [
+        "Inventory Level",
+        "Units Sold",
+        "Units Ordered",
+        "Price",
+        "Discount",
+        "Promotion",
+        "Competitor Pricing",
+        "Epidemic",
+        "Demand"
+    ],
+    "categorical_columns": [
+        "Store ID",
+        "Product ID",
+        "Category",
+        "Region",
+        "Weather Condition",
+        "Seasonality"
+    ],
+    "sales_candidates": [
+        "Units Sold",
+        "Units Ordered"
+    ],
+    "group_candidates": [
+        "Store ID",
+        "Category",
+        "Region"
+    ],
+    "forecast_ready": true,
+    "id": "e84f0d19-2e3d-4625-8201-5b0e4656ddb2"
+}
