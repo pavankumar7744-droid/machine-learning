@@ -103,14 +103,14 @@ def run_forecast(config, file_path):
             # dummy future features (in reality requires recursive prediction)
             row = {
                 'date': str(fd.date()),
-                'group': g,
+                'group': str(g) if g is not None else None,
                 'forecast': float(df_eng[target].mean()) # dummy naive forecast for now to ensure end-to-end runs
             }
             forecasts.append(row)
             
     summary = {
-        'total_forecast': sum(f['forecast'] for f in forecasts),
-        'avg_forecast': np.mean([f['forecast'] for f in forecasts])
+        'total_forecast': float(sum(f['forecast'] for f in forecasts)),
+        'avg_forecast': float(np.mean([f['forecast'] for f in forecasts])) if forecasts else 0.0
     }
     
     return {
