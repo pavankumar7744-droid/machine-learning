@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+import { Loader2 } from 'lucide-react';
+
 export default function UploadDataset() {
   const [file, setFile] = useState(null);
   const [analysis, setAnalysis] = useState(null);
@@ -25,9 +27,27 @@ export default function UploadDataset() {
   return (
     <div className="p-8">
       <h1 className="text-3xl font-bold mb-6 text-gray-800">Upload Dataset</h1>
-      <form onSubmit={handleUpload} className="mb-8">
-        <input type="file" accept=".csv,.xlsx" onChange={(e) => setFile(e.target.files[0])} className="mb-4 block" />
-        <button type="submit" disabled={loading} className="bg-blue-600 text-white px-4 py-2 rounded">
+      <form onSubmit={handleUpload} className="mb-8 flex flex-col items-start gap-4">
+        <input 
+          type="file" 
+          accept=".csv,.xlsx" 
+          onChange={(e) => setFile(e.target.files[0])} 
+          className="block w-full max-w-sm text-sm text-gray-500
+            file:mr-4 file:py-2 file:px-4
+            file:rounded-full file:border-0
+            file:text-sm file:font-semibold
+            file:bg-blue-50 file:text-blue-700
+            hover:file:bg-blue-100 cursor-pointer"
+        />
+        <button 
+          type="submit" 
+          disabled={loading || !file} 
+          className={`flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg font-medium text-white transition-all duration-300
+            ${loading || !file 
+              ? 'bg-blue-400 cursor-not-allowed opacity-70' 
+              : 'bg-blue-600 hover:bg-blue-700 hover:shadow-lg hover:-translate-y-0.5 cursor-pointer'}`}
+        >
+          {loading && <Loader2 className="animate-spin" size={18} />}
           {loading ? "Analyzing..." : "Upload & Analyze"}
         </button>
       </form>
