@@ -1,122 +1,60 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { Home, Upload, BarChart2, TrendingUp, Search } from 'lucide-react';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function Dashboard() {
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+    <div className="p-8">
+      <h1 className="text-3xl font-bold mb-4">E-Commerce ML Intelligence Platform</h1>
+      <p className="text-gray-600">Select an option from the sidebar to begin.</p>
+    </div>
+  );
 }
 
-export default App
+function PurchasePrediction() {
+  return <div className="p-8">Purchase Prediction UI (Integration ready)</div>;
+}
+
+function UploadDataset() {
+  return <div className="p-8">Upload Dataset UI (Integration ready)</div>;
+}
+
+function Forecasting() {
+  return <div className="p-8">Sales Forecasting UI (Integration ready)</div>;
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div className="flex h-screen bg-gray-50">
+        <aside className="w-64 bg-white shadow-md">
+          <div className="p-4 text-xl font-bold text-blue-600">ML Platform</div>
+          <nav className="mt-4 flex flex-col gap-2 p-4">
+            <Link to="/" className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded">
+              <Home size={20} /> Dashboard
+            </Link>
+            <Link to="/purchase" className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded">
+              <Search size={20} /> Purchase Prediction
+            </Link>
+            <Link to="/upload" className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded">
+              <Upload size={20} /> Upload Dataset
+            </Link>
+            <Link to="/forecast" className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded">
+              <TrendingUp size={20} /> Sales Forecasting
+            </Link>
+          </nav>
+        </aside>
+        
+        <main className="flex-1 overflow-auto">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/purchase" element={<PurchasePrediction />} />
+            <Route path="/upload" element={<UploadDataset />} />
+            <Route path="/forecast" element={<Forecasting />} />
+          </Routes>
+        </main>
+      </div>
+    </BrowserRouter>
+  );
+}
+
+export default App;
