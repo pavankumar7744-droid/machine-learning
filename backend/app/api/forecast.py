@@ -10,9 +10,9 @@ router = APIRouter()
 def generate_forecast(request: ForecastConfigureRequest):
     # Find dataset file
     file_path = None
-    for file in os.listdir("data/uploads"):
+    for file in os.listdir("../data/uploads"):
         if file.startswith(request.dataset_id) and not file.endswith("_analysis.json"):
-            file_path = os.path.join("data/uploads", file)
+            file_path = os.path.join("../data/uploads", file)
             break
             
     if not file_path:
@@ -22,8 +22,8 @@ def generate_forecast(request: ForecastConfigureRequest):
         result = run_forecast(request, file_path)
         
         # Save forecast to results
-        os.makedirs("results/forecasts", exist_ok=True)
-        with open(f"results/forecasts/{result['forecast_id']}.json", "w") as f:
+        os.makedirs("../results/forecasts", exist_ok=True)
+        with open(f"../results/forecasts/{result['forecast_id']}.json", "w") as f:
             json.dump(result, f, indent=4)
             
         return result

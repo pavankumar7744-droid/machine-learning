@@ -12,7 +12,7 @@ router = APIRouter()
 models = {}
 
 def load_models():
-    base_dir = "models/purchase/"
+    base_dir = "../models/purchase/"
     for model in ['xgboost', 'lightgbm']:
         for variant in ['full', 'no_pagevalues']:
             path = os.path.join(base_dir, f"{model}_{variant}.joblib")
