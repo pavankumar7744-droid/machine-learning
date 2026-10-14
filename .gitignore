@@ -2,12 +2,21 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
+.ipynb_checkpoints/
+
+# Data and models
 data/raw/*
 !data/raw/.gitkeep
 data/processed/*
 !data/processed/.gitkeep
 models/*
 !models/.gitkeep
-.idea/
-.vscode/
-.ipynb_checkpoints/
+
+# Runtime uploads and forecasts
+data/uploads/*
+results/forecasts/*
